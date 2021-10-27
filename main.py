@@ -84,9 +84,6 @@ class LinkedList:
             x = x.next
         return llstr
 
-
-
-
     def pop(self):
         x = self.head
         self.head = x.next
@@ -104,11 +101,11 @@ class Stack:
         return len(self.head)
 
     def __str__(self):
+        x = self.head
         llstr = ""
-        for x in range(len(self.head)):
+        while x:
             llstr += str(self.head.pop().value) +"\n"
-
-        return(llstr)
+        return llstr
 
 
     def pop(self):
@@ -119,7 +116,7 @@ class Queue:
         self.storage = LinkedList()
 
     def peek(self):
-        return self.storage.node(len(self.storage)-1).value
+        return self.storage.node(len(self.storage)-2).value
 
     def enqueue(self,element):
         self.storage.push(element)
